@@ -1,0 +1,1633 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff758c,
+            #ff7eb3,
+            #ffb6c1
+        );
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+
+/* ==============================
+   MUSIC BUTTON
+============================== */
+
+.music-button {
+
+    position: fixed;
+
+    top: 20px;
+    right: 20px;
+
+    z-index: 10000;
+
+    width: 55px;
+    height: 55px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #e91e63;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, .25);
+
+    transition: .3s;
+}
+
+
+.music-button:hover {
+
+    transform: scale(1.1);
+}
+
+
+.music-playing {
+
+    animation:
+        musicPulse
+        1.2s
+        infinite;
+}
+
+
+@keyframes musicPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* ==============================
+   SCREEN
+============================== */
+
+.screen {
+
+    display: none;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        40px 15px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.screen.active {
+
+    display: flex;
+
+    animation:
+        screenAppear
+        .7s
+        ease;
+}
+
+
+@keyframes screenAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.96)
+            translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* ==============================
+   GENERAL
+============================== */
+
+h1 {
+
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+
+h2 {
+
+    margin-bottom: 12px;
+}
+
+
+p {
+
+    line-height: 1.8;
+}
+
+
+.small {
+
+    font-size: 15px;
+
+    opacity: .9;
+
+    margin:
+        10px 0;
+}
+
+
+.content,
+.birthday-content,
+.final-content {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    text-align: center;
+}
+
+
+/* ==============================
+   PASSWORD CARD
+============================== */
+
+.card {
+
+    width: 100%;
+
+    max-width: 440px;
+
+    padding:
+        45px 32px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.18);
+
+    backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.45);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.22);
+}
+
+
+.lock {
+
+    font-size: 70px;
+
+    margin-bottom: 15px;
+
+    animation:
+        lockBounce
+        2s
+        infinite;
+}
+
+
+@keyframes lockBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* ==============================
+   INPUT
+============================== */
+
+input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    background: white;
+
+    color: #333;
+}
+
+
+input::placeholder {
+
+    color: #888;
+}
+
+
+/* ==============================
+   BUTTON
+============================== */
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    padding:
+        14px 25px;
+
+    margin-top: 20px;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #e91e63;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.18);
+
+    transition: .3s;
+}
+
+
+button:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,.25);
+}
+
+
+button:active {
+
+    transform:
+        scale(.94);
+}
+
+
+/* ==============================
+   BIRTHDAY
+============================== */
+
+.birthday-title {
+
+    font-size: 70px;
+
+    animation:
+        heartbeat
+        1.5s
+        infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+}
+
+
+.cake {
+
+    font-size: 115px;
+
+    margin:
+        20px 0;
+
+    animation:
+        cakeBounce
+        2s
+        infinite;
+}
+
+
+@keyframes cakeBounce {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(3deg);
+    }
+}
+
+
+.birthday-content h2 {
+
+    font-size: 32px;
+
+    letter-spacing: 5px;
+}
+
+
+.girl-text {
+
+    font-size: 20px;
+
+    margin-top: 10px;
+}
+
+
+.message {
+
+    max-width: 650px;
+
+    margin:
+        20px auto;
+
+    font-size: 18px;
+}
+
+
+/* ==============================
+   STORY
+============================== */
+
+.story-card {
+
+    max-width: 650px;
+
+    margin:
+        25px auto;
+
+    padding: 32px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.17);
+
+    backdrop-filter:
+        blur(15px);
+
+    border:
+        1px solid
+        rgba(255,255,255,.35);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.15);
+
+    transition: .4s;
+}
+
+
+.story-card:hover {
+
+    transform:
+        translateY(-8px);
+}
+
+
+.story-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+
+.story-highlight {
+
+    font-size: 19px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==============================
+   REASONS
+============================== */
+
+.reason-grid {
+
+    max-width: 620px;
+
+    margin:
+        35px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap: 18px;
+}
+
+
+.reason-grid button {
+
+    width: 80px;
+
+    height: 80px;
+
+    margin: auto;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    animation:
+        floatingHeart
+        2s
+        infinite;
+}
+
+
+@keyframes floatingHeart {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+}
+
+
+.reason-box {
+
+    max-width: 650px;
+
+    min-height: 90px;
+
+    margin:
+        20px auto;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,.2);
+
+    backdrop-filter:
+        blur(12px);
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    transition: opacity .3s;
+}
+
+
+/* ==============================
+   PHOTOS
+============================== */
+
+.photo-intro {
+
+    margin-bottom: 10px;
+}
+
+
+.slideshow {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin:
+        30px auto 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.main-photo-container {
+
+    width: 100%;
+
+    max-width: 680px;
+
+    position: relative;
+
+    padding: 10px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255,255,255,.18);
+
+    backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 25px 60px
+        rgba(0,0,0,.25);
+}
+
+
+#mainPhoto {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 520px;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    cursor: zoom-in;
+
+    transition:
+        opacity .35s,
+        transform .35s;
+}
+
+
+.photo-number {
+
+    position: absolute;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    padding:
+        7px 15px;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0,0,0,.55);
+}
+
+
+.slide-btn {
+
+    width: 55px;
+
+    min-width: 55px;
+
+    height: 55px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+}
+
+
+/* ==============================
+   CAPTION
+============================== */
+
+.photo-caption {
+
+    min-height: 50px;
+
+    max-width: 650px;
+
+    margin:
+        10px auto;
+}
+
+
+.photo-caption p {
+
+    font-size: 18px;
+
+    font-style: italic;
+}
+
+
+/* ==============================
+   THUMBNAILS
+============================== */
+
+.thumbnail-container {
+
+    max-width: 900px;
+
+    margin:
+        25px auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.thumbnail {
+
+    width: 75px;
+
+    height: 75px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    border:
+        3px solid transparent;
+
+    opacity: .65;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.thumbnail:hover {
+
+    opacity: 1;
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+}
+
+
+.active-thumb {
+
+    opacity: 1;
+
+    border:
+        3px solid white;
+
+    transform:
+        scale(1.08);
+}
+
+
+.memory-note {
+
+    font-weight: bold;
+
+    margin-top: 15px;
+}
+
+
+/* ==============================
+   FULLSCREEN
+============================== */
+
+#mainPhoto.fullscreen {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    max-height: 100vh;
+
+    object-fit: contain;
+
+    padding: 30px;
+
+    background:
+        rgba(0,0,0,.95);
+
+    border-radius: 0;
+
+    cursor: zoom-out;
+}
+
+
+/* ==============================
+   LETTER
+============================== */
+
+.letter {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    padding: 45px;
+
+    border-radius: 28px;
+
+    background: white;
+
+    color: #6d214f;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.25);
+
+    text-align: left;
+}
+
+
+.letter-heart {
+
+    text-align: center;
+
+    font-size: 55px;
+}
+
+
+.letter h1 {
+
+    color: #e91e63;
+
+    font-size: 42px;
+
+    text-align: center;
+}
+
+
+.letter p {
+
+    font-size: 17px;
+
+    margin:
+        20px 0;
+}
+
+
+.love-line {
+
+    color: #e91e63;
+
+    font-weight: bold;
+}
+
+
+.signature {
+
+    text-align: right;
+}
+
+
+/* ==============================
+   FINAL
+============================== */
+
+.final-content {
+
+    animation:
+        finalAppear
+        1.5s
+        ease;
+}
+
+
+@keyframes finalAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(.5);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+.big-heart {
+
+    font-size: 150px;
+
+    animation:
+        bigHeartbeat
+        1.2s
+        infinite;
+}
+
+
+@keyframes bigHeartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+
+.final-content h1 {
+
+    font-size: 60px;
+}
+
+
+.final-content h2 {
+
+    font-size: 48px;
+}
+
+
+.final-content h3 {
+
+    font-size: 48px;
+
+    margin:
+        30px 0;
+
+    animation:
+        heartbeat
+        1s
+        infinite;
+}
+
+
+.final-content p {
+
+    font-size: 20px;
+}
+
+
+.from {
+
+    margin-top: 30px;
+
+    font-style: italic;
+}
+
+
+/* ==============================
+   FLOATING HEARTS
+============================== */
+
+.hearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+.heart {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    animation:
+        floatHeart
+        linear
+        forwards;
+
+    opacity: .8;
+}
+
+
+@keyframes floatHeart {
+
+    from {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .8;
+    }
+
+    to {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 700px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+
+    .birthday-title {
+        font-size: 48px;
+    }
+
+
+    .cake {
+        font-size: 85px;
+    }
+
+
+    .birthday-content h2 {
+
+        font-size: 24px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .reason-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        max-width: 300px;
+    }
+
+
+    .reason-grid button {
+
+        width: 70px;
+
+        height: 70px;
+    }
+
+
+    .slideshow {
+
+        gap: 5px;
+    }
+
+
+    .slide-btn {
+
+        width: 42px;
+
+        min-width: 42px;
+
+        height: 42px;
+
+        font-size: 19px;
+    }
+
+
+    #mainPhoto {
+
+        max-height: 400px;
+    }
+
+
+    .thumbnail {
+
+        width: 58px;
+
+        height: 58px;
+    }
+
+
+    .letter {
+
+        padding:
+            28px 22px;
+    }
+
+
+    .letter h1 {
+
+        font-size: 32px;
+    }
+
+
+    .final-content h1 {
+
+        font-size: 42px;
+    }
+
+
+    .final-content h2 {
+
+        font-size: 35px;
+    }
+
+
+    .final-content h3 {
+
+        font-size: 36px;
+    }
+
+
+    .big-heart {
+
+        font-size: 105px;
+    }
+
+
+    .music-button {
+
+        width: 48px;
+
+        height: 48px;
+
+        top: 12px;
+
+        right: 12px;
+    }
+
+}
+
+/* ==========================================
+   CINEMATIC HEART UNLOCK
+========================================== */
+
+.heart-unlock {
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #ff5c91 0%,
+            #e91e63 35%,
+            #7b1645 75%,
+            #250015 100%
+        );
+
+    z-index: 999999;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .5s ease,
+        visibility .5s ease;
+}
+
+
+/* SHOW OVERLAY */
+
+.heart-unlock.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* ==========================================
+   HEART GLOW
+========================================== */
+
+.heart-glow {
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.35),
+            rgba(255,255,255,0) 70%
+        );
+
+    animation:
+        heartGlowPulse
+        1.5s
+        infinite;
+
+    pointer-events: none;
+}
+
+
+/* ==========================================
+   HEART DOORS
+========================================== */
+
+.heart-door {
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 170px;
+    height: 150px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1744,
+            #e91e63
+        );
+
+    z-index: 3;
+
+    transition:
+        transform 1.2s
+        cubic-bezier(.68,-.55,.27,1.55);
+
+    box-shadow:
+        0 0 40px
+        rgba(255,0,100,.6);
+}
+
+
+/* LEFT HALF */
+
+.heart-door-left {
+
+    right: 50%;
+
+    border-radius:
+        100px
+        100px
+        0
+        0;
+
+    transform:
+        translateY(-50%)
+        rotate(-45deg);
+
+    transform-origin: 100% 100%;
+}
+
+
+/* RIGHT HALF */
+
+.heart-door-right {
+
+    left: 50%;
+
+    border-radius:
+        100px
+        100px
+        0
+        0;
+
+    transform:
+        translateY(-50%)
+        rotate(45deg);
+
+    transform-origin: 0 100%;
+}
+
+
+/* ==========================================
+   OPEN HEART
+========================================== */
+
+.heart-unlock.heart-open
+.heart-door-left {
+
+    transform:
+        translate(-170px,-50%)
+        rotate(-55deg)
+        scale(.9);
+}
+
+
+.heart-unlock.heart-open
+.heart-door-right {
+
+    transform:
+        translate(170px,-50%)
+        rotate(55deg)
+        scale(.9);
+}
+
+
+/* ==========================================
+   CENTER HEART
+========================================== */
+
+.unlock-heart {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 170px;
+    height: 170px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 105px;
+
+    filter:
+        drop-shadow(
+            0 0 30px
+            rgba(255,255,255,.7)
+        );
+
+    animation:
+        cinematicHeartbeat
+        1s
+        infinite;
+}
+
+
+.unlock-heart span {
+
+    display: block;
+
+    line-height: 1;
+}
+
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+.unlock-message {
+
+    position: absolute;
+
+    top: calc(50% + 135px);
+
+    left: 50%;
+
+    transform:
+        translateX(-50%)
+        translateY(20px);
+
+    width: 90%;
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 10;
+
+    opacity: 0;
+
+    animation:
+        messageReveal
+        1s
+        .7s
+        forwards;
+
+    pointer-events: none;
+}
+
+
+.unlock-title {
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 0 20px
+        rgba(255,255,255,.7);
+}
+
+
+.unlock-subtitle {
+
+    margin-top: 10px;
+
+    font-size: 18px;
+
+    opacity: .95;
+}
+
+
+/* ==========================================
+   HEART BURST
+========================================== */
+
+.burst-heart {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    z-index: 20;
+
+    font-size: var(--size);
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    animation:
+        burstHeart
+        1.8s
+        var(--delay)
+        ease-out
+        forwards;
+}
+
+
+/* ==========================================
+   FADE OUT
+========================================== */
+
+.heart-unlock.heart-fade {
+
+    animation:
+        heartOverlayFade
+        .5s
+        ease
+        forwards;
+}
+
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes cinematicHeartbeat {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+    }
+
+    50% {
+
+        transform: scale(1.15);
+    }
+}
+
+
+@keyframes heartGlowPulse {
+
+    0%,
+    100% {
+
+        transform: scale(.85);
+
+        opacity: .5;
+    }
+
+    50% {
+
+        transform: scale(1.15);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes messageReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+    }
+}
+
+
+@keyframes burstHeart {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%,-50%)
+            scale(.3)
+            rotate(0deg);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                calc(-50% + var(--x)),
+                calc(-50% + var(--y))
+            )
+            scale(1)
+            rotate(360deg);
+    }
+}
+
+
+@keyframes heartOverlayFade {
+
+    from {
+
+        opacity: 1;
+    }
+
+    to {
+
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+
+    .unlock-heart {
+
+        font-size: 80px;
+    }
+
+    .heart-door {
+
+        width: 120px;
+        height: 110px;
+    }
+
+    .heart-unlock.heart-open
+    .heart-door-left {
+
+        transform:
+            translate(-120px,-50%)
+            rotate(-55deg);
+    }
+
+    .heart-unlock.heart-open
+    .heart-door-right {
+
+        transform:
+            translate(120px,-50%)
+            rotate(55deg);
+    }
+
+    .unlock-title {
+
+        font-size: 32px;
+    }
+
+    .unlock-subtitle {
+
+        font-size: 15px;
+    }
+}

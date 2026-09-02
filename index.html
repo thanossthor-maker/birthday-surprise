@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Hey TUN TUN❤️</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================
+         BACKGROUND HEARTS
+    ====================================== -->
+
+    <div class="hearts"></div>
+
+
+    <!-- =====================================
+         MUSIC
+    ====================================== -->
+
+    <audio
+        id="backgroundMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="./audio/anbil.avan.mp3"
+            type="audio/mpeg"
+        >
+
+        Your browser does not support audio.
+
+    </audio>
+
+
+    <!-- MUSIC BUTTON -->
+
+    <button
+        id="musicButton"
+        class="music-button"
+        onclick="toggleMusic()"
+        title="Play / Pause Music"
+    >
+        ▶️
+    </button>
+
+
+
+    <!-- =====================================
+         PASSWORD SCREEN
+    ====================================== -->
+
+    <section
+        id="passwordScreen"
+        class="screen active"
+    >
+
+        <div class="card">
+
+            <div class="lock">
+                🔐
+            </div>
+
+            <h1>
+                Hey TUN TUN ❤️
+            </h1>
+
+            <p>
+                I made something special
+                <br>
+                just for you...
+            </p>
+
+            <p class="small">
+                But first, you need to unlock it 🔑
+            </p>
+
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter our secret..."
+                autocomplete="off"
+            >
+
+
+            <button
+                onclick="checkPassword()"
+            >
+                Unlock My Surprise ❤️
+            </button>
+
+
+            <p id="wrongPassword"></p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         BIRTHDAY SCREEN
+    ====================================== -->
+
+    <section
+        id="birthdayScreen"
+        class="screen"
+    >
+
+        <div class="birthday-content">
+
+            <p class="small">
+                A special message for
+            </p>
+
+
+            <h1 class="birthday-title">
+                Priyanga ❤️
+            </h1>
+
+
+            <div class="cake">
+                🎂
+            </div>
+
+
+            <h2>
+                HAPPY BIRTHDAY
+            </h2>
+
+
+            <p class="girl-text">
+                My beautiful girl ❤️
+            </p>
+
+
+            <p class="message">
+                Today is special because the person
+                who means so much to me was born.
+            </p>
+
+
+            <button
+                onclick="showStory()"
+            >
+                I have something to tell you 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         OUR STORY
+    ====================================== -->
+
+    <section
+        id="storyScreen"
+        class="screen"
+    >
+
+        <div class="content">
+
+            <h1>
+                Our Story ❤️
+            </h1>
+
+
+            <div class="story-card">
+
+                <div class="story-icon">
+                    🌸
+                </div>
+
+                <h2>
+                    Where It All Started
+                </h2>
+
+                <p class="story-highlight">
+                    We met in college...
+                </p>
+
+                <p>
+                    I never knew that meeting you
+                    would become one of the most
+                    beautiful parts of my life.
+                </p>
+
+            </div>
+
+
+
+            <div class="story-card">
+
+                <div class="story-icon">
+                    💋
+                </div>
+
+                <h2>
+                    A Memory I'll Never Forget
+                </h2>
+
+                <p class="story-highlight">
+                    Our first kiss...
+                </p>
+
+                <p>
+                    It's one of those memories
+                    that will always have a special
+                    place in my heart.
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="showReasons()"
+            >
+                10 Reasons Why I Love You ❤️
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         10 REASONS
+    ====================================== -->
+
+    <section
+        id="reasonsScreen"
+        class="screen"
+    >
+
+        <div class="content">
+
+            <h1>
+                10 Reasons ❤️
+            </h1>
+
+
+            <p>
+                Tap each heart to discover one.
+            </p>
+
+
+            <div class="reason-grid">
+
+                <button onclick="showReason(1)">
+                    ❤️
+                </button>
+
+                <button onclick="showReason(2)">
+                    ❤️
+                </button>
+
+                <button onclick="showReason(3)">
+                    ❤️
+                </button>
+
+                <button onclick="showReason(4)">
+                    ❤️
+                </button>
+
+                <button onclick="showReason(5)">
+                    ❤️
+                </button>
+
+                <button onclick="showReason(6)">
+                    ❤️
+                </button>
+
+                <button onclick="showReason(7)">
+                    ❤️
+                </button>
+
+                <button onclick="showReason(8)">
+                    ❤️
+                </button>
+
+                <button onclick="showReason(9)">
+                    ❤️
+                </button>
+
+                <button onclick="showReason(10)">
+                    ❤️
+                </button>
+
+            </div>
+
+
+            <div
+                id="reasonText"
+                class="reason-box"
+            >
+                Tap a heart ❤️
+            </div>
+
+
+            <button
+                onclick="showPhotos()"
+            >
+                Our Memories 📸
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         PHOTO MEMORIES
+    ====================================== -->
+
+    <section
+        id="photosScreen"
+        class="screen"
+    >
+
+        <div class="content">
+
+            <h1>
+                Our Memories 📸
+            </h1>
+
+
+            <p class="photo-intro">
+                Every picture has a story...
+            </p>
+
+
+
+            <!-- SLIDESHOW -->
+
+            <div class="slideshow">
+
+
+                <button
+                    class="slide-btn"
+                    onclick="previousPhoto()"
+                >
+                    ❮
+                </button>
+
+
+                <div class="main-photo-container">
+
+                    <img
+                        id="mainPhoto"
+                        src="images/photo1.jpg"
+                        alt="Our memory"
+                    >
+
+
+                    <div
+                        id="photoNumber"
+                        class="photo-number"
+                    >
+                        1 / 15
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="slide-btn"
+                    onclick="nextPhoto()"
+                >
+                    ❯
+                </button>
+
+            </div>
+
+
+
+            <!-- CAPTION -->
+
+            <div class="photo-caption">
+
+                <p id="photoCaption">
+                    The beginning of our
+                    beautiful memories. ❤️
+                </p>
+
+            </div>
+
+
+
+            <!-- THUMBNAILS -->
+
+            <div class="thumbnail-container">
+
+                <img
+                    class="thumbnail active-thumb"
+                    src="images/photo1.jpg"
+                    onclick="selectPhoto(1)"
+                    alt="Photo 1"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo2.jpg"
+                    onclick="selectPhoto(2)"
+                    alt="Photo 2"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo3.jpg"
+                    onclick="selectPhoto(3)"
+                    alt="Photo 3"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo4.jpg"
+                    onclick="selectPhoto(4)"
+                    alt="Photo 4"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo5.jpg"
+                    onclick="selectPhoto(5)"
+                    alt="Photo 5"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo6.jpg"
+                    onclick="selectPhoto(6)"
+                    alt="Photo 6"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo7.jpg"
+                    onclick="selectPhoto(7)"
+                    alt="Photo 7"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo8.jpg"
+                    onclick="selectPhoto(8)"
+                    alt="Photo 8"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo9.jpg"
+                    onclick="selectPhoto(9)"
+                    alt="Photo 9"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo10.jpg"
+                    onclick="selectPhoto(10)"
+                    alt="Photo 10"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo11.jpg"
+                    onclick="selectPhoto(11)"
+                    alt="Photo 11"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo12.jpg"
+                    onclick="selectPhoto(12)"
+                    alt="Photo 12"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo13.jpg"
+                    onclick="selectPhoto(13)"
+                    alt="Photo 13"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo14.jpg"
+                    onclick="selectPhoto(14)"
+                    alt="Photo 14"
+                >
+
+                <img
+                    class="thumbnail"
+                    src="images/photo15.jpg"
+                    onclick="selectPhoto(15)"
+                    alt="Photo 15"
+                >
+
+            </div>
+
+
+
+            <p class="memory-note">
+                Click the main photo for fullscreen 🖼️
+            </p>
+
+
+            <button
+                onclick="showLetter()"
+            >
+                One Last Thing... 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         LOVE LETTER
+    ====================================== -->
+
+    <section
+        id="letterScreen"
+        class="screen"
+    >
+
+        <div class="letter">
+
+            <div class="letter-heart">
+                💌
+            </div>
+
+
+            <h1>
+                Dear Priyanga ❤️
+            </h1>
+
+
+            <p>
+                I don't know if words will ever be
+                enough to explain what you mean to me.
+            </p>
+
+
+            <p>
+                I love your smile.
+                I love the way you care about me.
+                And most of all, I love the way
+                you love me more than anything.
+            </p>
+
+
+            <p>
+                From the day we met in college to
+                all the memories we've created
+                together, every moment with you
+                has become something precious to me.
+            </p>
+
+
+            <p>
+                Our first kiss is a memory I'll always
+                keep close to my heart.
+            </p>
+
+
+            <p>
+                Thank you for coming into my life.
+                Thank you for loving me.
+                Thank you for being you.
+            </p>
+
+
+            <p class="love-line">
+                I hope we create many, many more
+                memories together. ❤️
+            </p>
+
+
+            <p class="signature">
+                Always yours,
+                <br>
+                <strong>
+                    FOREVER LITTLE FELLOW ❤️
+                </strong>
+            </p>
+
+
+            <button
+                onclick="finalSurprise()"
+            >
+                One More Surprise 🎁
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         FINAL SURPRISE
+    ====================================== -->
+
+    <section
+        id="finalScreen"
+        class="screen"
+    >
+
+        <div class="final-content">
+
+            <div class="big-heart">
+                ❤️
+            </div>
+
+
+            <h1>
+                Happy Birthday
+            </h1>
+
+
+            <h2>
+                Priyanga ❤️
+            </h2>
+
+
+            <p>
+                If I had to choose again,
+                I'd still choose you.
+            </p>
+
+
+            <p>
+                Today, tomorrow and in all the
+                beautiful memories waiting for us...
+            </p>
+
+
+            <h3>
+                I LOVE YOU ❤️
+            </h3>
+
+
+            <p class="from">
+                — Mukesh Kannan
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="script.js"></script>
+
+
+    <!-- CINEMATIC HEART UNLOCK -->
+    <div id="heartUnlock" class="heart-unlock" aria-hidden="true">
+        <div class="heart-glow"></div>
+        <div class="heart-door heart-door-left"></div>
+        <div class="heart-door heart-door-right"></div>
+
+        <div class="unlock-heart">
+            <span>❤️</span>
+        </div>
+
+        <div class="unlock-message">
+            <div class="unlock-title">Unlocked ❤️</div>
+            <div class="unlock-subtitle">Something special is waiting for you...</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
